@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>KiBruder – Shadow Kitsune Sector</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: #02030a;
+        }
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            text-shadow: 0 0 8px #0f0;
+        }
+        #centerOverlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            text-shadow: 0 0 10px #0f0;
+        }
+        .button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #0f0;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #0f0;
+        }
+        .button:hover {
+            background: #9f9;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" width="480" height="640"></canvas>
+
+    <div id="ui">
+        <div>KIBRUDER – SHADOW KITSUNE SECTOR</div>
+        <div style="color:#888;font-size:12px;">
+            Pfeiltasten: bewegen · Leertaste: schießen · P: Pause
+        </div>
+        <div id="hudLine" style="color:#aaa;font-size:11px;"></div>
+    </div>
+
+    <div id="centerOverlay">
+        <div id="centerTitle" style="font-size:22px;margin-bottom:8px;">SHADOW KITSUNE SECTOR</div>
+        <div id="centerText" style="font-size:13px;color:#aaa;margin-bottom:12px;">
+            KiBruder driftet durch den Neon‑Sektor.<br>
+            Halte die Linie. Zerstöre alles. Sammle Power‑Ups.
+        </div>
+        <button id="startBtn" class="button">START</button>
+    </div>
+
+    <!-- Reihenfolge wichtig: erst main, dann ui -->
+    <script src="main.js"></script>
+    <script src="ui.js"></script>
+</body>
+</html>
