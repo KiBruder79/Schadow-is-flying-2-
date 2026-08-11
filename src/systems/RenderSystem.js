@@ -14,6 +14,8 @@ export default class RenderSystem{
 
   drawBullets(bullets){ this.ctx.fillStyle='#0f0'; bullets.forEach(b=>{ if (b.active) this.ctx.fillRect(b.x,b.y,b.w,b.h); }); }
 
+  drawEnemyBullets(bullets){ this.ctx.fillStyle='#ff0'; bullets.forEach(b=>{ if (b.active) this.ctx.fillRect(b.x,b.y,b.w,b.h); }); }
+
   drawEnemies(enemies){
     const ctx=this.ctx; enemies.forEach(e=>{ if (e.active!==false) { ctx.fillStyle='#f33'; ctx.fillRect(e.x,e.y,e.w,e.h); } });
   }
@@ -32,5 +34,6 @@ export default class RenderSystem{
     const ctx=this.ctx; ctx.fillStyle='#0f0'; ctx.font='12px Arial'; ctx.fillText('HP: '+player.hp+' / '+player.maxHp,10,20); ctx.fillText('Score: '+score,10,36); ctx.fillText('Wave: '+wave,10,52); ctx.fillText('Highscore: '+highscore,10,68);
     if (flags.triple) { ctx.fillStyle='#ff0'; ctx.fillText('TRIPLE',400,20); }
     if (flags.shield) { ctx.fillStyle='#0ff'; ctx.fillText('SHIELD',400,36); }
+    if (flags.speed) { ctx.fillStyle='#f0f'; ctx.fillText('SPEED',400,52); }
   }
 }
