@@ -1,0 +1,40 @@
+/* style.css - Ausgelagertes Styling */
+:root{
+  --bg:#02030a;
+  --accent:#0f0;
+  --muted:#888;
+}
+html,body{height:100%;}
+body {
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  background: var(--bg);
+}
+#ui {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  text-shadow: 0 0 8px var(--accent);
+}
+#ui .sub{color:var(--muted);font-size:12px}
+#ui .small{font-size:11px;color:#aaa}
+#centerOverlay{
+  position:absolute;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  color:var(--accent);text-align:center;text-shadow:0 0 10px var(--accent);
+}
+#centerTitle{font-size:22px;margin-bottom:8px}
+#centerText{font-size:13px;color:#aaa;margin-bottom:12px}
+.button{margin:6px;padding:10px 18px;background:var(--accent);color:#000;border:none;border-radius:6px;font-size:16px;cursor:pointer;box-shadow:0 0 15px var(--accent)}
+.button:hover{background:#9f9}
+.overlayButtons{display:flex;gap:8px;justify-content:center}
